@@ -1,0 +1,488 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\departmentappointscheduling\\view\\frm_departmentappointscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\departmentappointscheduling\\view\\frm_departmentappointscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\service\\departmentappointschedulingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\service\\departmentappointschedulingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\model\\departmentappointscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\departmentappointscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\service\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\service\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\model\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\system\\departmentappointscheduling\\viewmodel\\departmentappointschedulingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\departmentappointscheduling\\viewmodel\\departmentappointschedulingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\departmentappointscheduling\\view\\frm_departmentappointscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\departmentappointscheduling\\view\\frm_departmentappointscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\system\\departmentappointscheduling\\view\\frm_departmentappointscheduling.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\departmentappointscheduling\\view\\frm_departmentappointscheduling.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\helper\\contants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\helper\\contants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\frm_rib_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\frm_rib_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\model\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\network\\apiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\network\\apiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\model\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\service\\examinationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\service\\examinationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\service\\sepcialtyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\service\\sepcialtyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\service\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\service\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\model\\examination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\examination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\service\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\service\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\model\\sepcialty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\sepcialty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\model\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\frm_department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\frm_department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|c:\\users\\ndung\\source\\repos\\appbookingnd2\\appbookingnd2\\model\\comboboxitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\model\\comboboxitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\frm_rib_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\frm_rib_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\helper\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\helper\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\frm_room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\frm_room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|C:\\Users\\ndung\\source\\repos\\AppBookingND2\\appbookingnd2\\system\\frm_room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CADAD5E6-A142-4021-9293-A30E4FA24D42}|AppBookingND2\\AppBookingND2.csproj|solutionrelative:appbookingnd2\\system\\frm_room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\ApiResponse.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T10:15:22.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_DepartmentAppointScheduling.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs",
+              "RelativeToolTip": "AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs",
+              "ViewState": "AgIAADICAAAAAAAAAAAkwEECAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:29:50.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DepartMentAppointScheduling.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\DepartMentAppointScheduling.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\DepartMentAppointScheduling.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\DepartMentAppointScheduling.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\DepartMentAppointScheduling.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA3wBsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:34:46.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DepartMentService.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\DepartMentService.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Service\\DepartMentService.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\DepartMentService.cs",
+              "RelativeToolTip": "AppBookingND2\\Service\\DepartMentService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowE4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:06:43.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DepartMentAppointSchedulingService.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\DepartMentAppointSchedulingService.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Service\\DepartMentAppointSchedulingService.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\DepartMentAppointSchedulingService.cs",
+              "RelativeToolTip": "AppBookingND2\\Service\\DepartMentAppointSchedulingService.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAIwIgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T04:02:30.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DepartmentAppointSchedulingViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\ViewModel\\DepartmentAppointSchedulingViewModel.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\DepartmentAppointScheduling\\ViewModel\\DepartmentAppointSchedulingViewModel.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\ViewModel\\DepartmentAppointSchedulingViewModel.cs",
+              "RelativeToolTip": "AppBookingND2\\System\\DepartmentAppointScheduling\\ViewModel\\DepartmentAppointSchedulingViewModel.cs",
+              "ViewState": "AgIAAFEBAAAAAAAAAAArwFUBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:49:13.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Program.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Program.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Program.cs",
+              "RelativeToolTip": "AppBookingND2\\Program.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAEwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:10:14.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Frm_DepartmentAppointScheduling.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs [Design]",
+              "RelativeToolTip": "AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:27:51.993Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Frm_DepartmentAppointScheduling.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.Designer.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.Designer.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.Designer.cs",
+              "RelativeToolTip": "AppBookingND2\\System\\DepartmentAppointScheduling\\View\\Frm_DepartmentAppointScheduling.Designer.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAArwHMAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T16:30:40.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Contants.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Helper\\Contants.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Helper\\Contants.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Helper\\Contants.cs",
+              "RelativeToolTip": "AppBookingND2\\Helper\\Contants.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:49:30.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Frm_RIb_Menu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_RIb_Menu.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\Frm_RIb_Menu.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_RIb_Menu.cs [Design]",
+              "RelativeToolTip": "AppBookingND2\\System\\Frm_RIb_Menu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T01:59:08.28Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApiConfig.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Network\\ApiConfig.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Network\\ApiConfig.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Network\\ApiConfig.cs",
+              "RelativeToolTip": "AppBookingND2\\Network\\ApiConfig.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAIA8wCEAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T04:04:53.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DepartMent.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\DepartMent.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\DepartMent.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\DepartMent.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\DepartMent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:03:01.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Doctor.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\Doctor.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Doctor.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\Doctor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:03:25.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ExaminationService.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\ExaminationService.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Service\\ExaminationService.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\ExaminationService.cs",
+              "RelativeToolTip": "AppBookingND2\\Service\\ExaminationService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:06:17.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SepcialtyService.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\SepcialtyService.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Service\\SepcialtyService.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\SepcialtyService.cs",
+              "RelativeToolTip": "AppBookingND2\\Service\\SepcialtyService.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwD8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:05:46.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RoomService.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\RoomService.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Service\\RoomService.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\RoomService.cs",
+              "RelativeToolTip": "AppBookingND2\\Service\\RoomService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T14:28:53.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Examination.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Examination.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\Examination.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Examination.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\Examination.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:03:51.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DoctorService.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\DoctorService.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Service\\DoctorService.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Service\\DoctorService.cs",
+              "RelativeToolTip": "AppBookingND2\\Service\\DoctorService.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAAwN0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:06:02.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Sepcialty.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Sepcialty.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\Sepcialty.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Sepcialty.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\Sepcialty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T15:02:39.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Room.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\Room.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\Room.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T14:24:50.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ComboBoxItem.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\ComboBoxItem.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Model\\ComboBoxItem.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Model\\ComboBoxItem.cs",
+              "RelativeToolTip": "AppBookingND2\\Model\\ComboBoxItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T14:39:13.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Frm_Department.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_Department.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\Frm_Department.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_Department.cs [Design]",
+              "RelativeToolTip": "AppBookingND2\\System\\Frm_Department.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:20:57.723Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Helper\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\Helper\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\Helper\\RelayCommand.cs",
+              "RelativeToolTip": "AppBookingND2\\Helper\\RelayCommand.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T03:52:49.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Frm_RIb_Menu.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_RIb_Menu.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\Frm_RIb_Menu.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_RIb_Menu.cs",
+              "RelativeToolTip": "AppBookingND2\\System\\Frm_RIb_Menu.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowCEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:13:29.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Frm_Room.cs",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_Room.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\Frm_Room.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_Room.cs",
+              "RelativeToolTip": "AppBookingND2\\System\\Frm_Room.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:15:37.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Frm_Room.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_Room.cs",
+              "RelativeDocumentMoniker": "AppBookingND2\\System\\Frm_Room.cs",
+              "ToolTip": "C:\\Users\\ndung\\source\\repos\\AppBookingND2\\AppBookingND2\\System\\Frm_Room.cs [Design]",
+              "RelativeToolTip": "AppBookingND2\\System\\Frm_Room.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T02:14:29.575Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
