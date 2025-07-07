@@ -61,11 +61,11 @@ namespace AppBookingND2.Service
         }
 
         // GET: /api/GetRoomsAsync
-        public async Task<List<Room>> GetRoomsAsync()
+        public async Task<List<Room>> GetRoomsAsync(int id)
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoom");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoom?id={id}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();

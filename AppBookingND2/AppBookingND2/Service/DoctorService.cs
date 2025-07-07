@@ -65,7 +65,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/GetListDoctor");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Doctor/GetListDoctor");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();

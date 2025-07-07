@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace AppBookingND2.Service
 {
-    public class TimeSlotService
+    public class ZoneService
     {
         private readonly HttpClient _httpClient;
         private readonly ApiConfig _apiConfig;
 
-        public TimeSlotService(ApiConfig apiConfig = null)
+        public ZoneService(ApiConfig apiConfig = null)
         {
             _apiConfig = apiConfig ?? ApiConfig.LoadFromConfig();
             _httpClient = new HttpClient();
@@ -60,23 +60,23 @@ namespace AppBookingND2.Service
             }
         }
 
-        // GET: /api/GetTimeSlotsAsync
-        public async Task<List<TimeSlot>> GetTimeSlotsAsync()
+        // GET: /api/GetZonesAsync
+        public async Task<List<Zone>> GetZonesAsync()
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/TimeSlot/GetListTimeSlot");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/ZoneControllercs/GetListZone");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
                 // Deserialize ApiResponse wrapper trước
-                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<TimeSlot>>>(json, new JsonSerializerOptions
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<Zone>>>(json, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
                 // Trả về data từ ApiResponse
-                return apiResponse?.Data ?? new List<TimeSlot>();
+                return apiResponse?.Data ?? new List<Zone>();
             }
             catch (HttpRequestException ex)
             {
@@ -88,23 +88,23 @@ namespace AppBookingND2.Service
             }
         }
 
-        // GET: /api/TimeSlots/{id}
-        public async Task<List<TimeSlot>> GetTimeSlotByDepartmentAppointSchedulingIdAsync(int id)
+        // GET: /api/Zones/{id}
+        public async Task<List<Zone>> GetZoneByIdAsync(int id)
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/TimeSlot/GetTimeSlotByDepartMentScheduling?id={id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Zone/GetZoneByDepartMentScheduling?id={id}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
                 // Deserialize ApiResponse wrapper trước
-                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<TimeSlot>>>(json, new JsonSerializerOptions
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<Zone>>>(json, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
                 // Trả về data từ ApiResponse
-                return apiResponse?.Data ?? new List<TimeSlot>();
+                return apiResponse?.Data ?? new List<Zone>();
             }
             catch (HttpRequestException ex)
             {
@@ -112,24 +112,24 @@ namespace AppBookingND2.Service
             }
         }
 
-        //// POST: /api/TimeSlots
-        //public async Task<TimeSlot> CreateTimeSlotAsync(TimeSlot TimeSlot)
+        //// POST: /api/Zones
+        //public async Task<Zone> CreateZoneAsync(Zone Zone)
         //{
         //    try
         //    {
-        //        var json = JsonSerializer.Serialize(TimeSlot);
+        //        var json = JsonSerializer.Serialize(Zone);
         //        var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-        //        var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}/api/TimeSlots", content);
+        //        var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}/api/Zones", content);
         //        response.EnsureSuccessStatusCode();
 
         //        var responseJson = await response.Content.ReadAsStringAsync();
-        //        var createdTimeSlot = JsonSerializer.Deserialize<TimeSlot>(responseJson, new JsonSerializerOptions
+        //        var createdZone = JsonSerializer.Deserialize<Zone>(responseJson, new JsonSerializerOptions
         //        {
         //            PropertyNameCaseInsensitive = true
         //        });
 
-        //        return createdTimeSlot;
+        //        return createdZone;
         //    }
         //    catch (HttpRequestException ex)
         //    {
@@ -137,24 +137,24 @@ namespace AppBookingND2.Service
         //    }
         //}
 
-        //// PUT: /api/TimeSlots/{id}
-        //public async Task<TimeSlot> UpdateTimeSlotAsync(int id, TimeSlot TimeSlot)
+        //// PUT: /api/Zones/{id}
+        //public async Task<Zone> UpdateZoneAsync(int id, Zone Zone)
         //{
         //    try
         //    {
-        //        var json = JsonSerializer.Serialize(TimeSlot);
+        //        var json = JsonSerializer.Serialize(Zone);
         //        var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-        //        var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}/api/TimeSlots/{id}", content);
+        //        var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}/api/Zones/{id}", content);
         //        response.EnsureSuccessStatusCode();
 
         //        var responseJson = await response.Content.ReadAsStringAsync();
-        //        var updatedTimeSlot = JsonSerializer.Deserialize<TimeSlot>(responseJson, new JsonSerializerOptions
+        //        var updatedZone = JsonSerializer.Deserialize<Zone>(responseJson, new JsonSerializerOptions
         //        {
         //            PropertyNameCaseInsensitive = true
         //        });
 
-        //        return updatedTimeSlot;
+        //        return updatedZone;
         //    }
         //    catch (HttpRequestException ex)
         //    {
@@ -162,12 +162,12 @@ namespace AppBookingND2.Service
         //    }
         //}
 
-        //// DELETE: /api/TimeSlots/{id}
-        //public async Task<bool> DeleteTimeSlotAsync(int id)
+        //// DELETE: /api/Zones/{id}
+        //public async Task<bool> DeleteZoneAsync(int id)
         //{
         //    try
         //    {
-        //        var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}/api/TimeSlots/{id}");
+        //        var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}/api/Zones/{id}");
         //        return response.IsSuccessStatusCode;
         //    }
         //    catch (HttpRequestException ex)
@@ -176,22 +176,22 @@ namespace AppBookingND2.Service
         //    }
         //}
 
-        //// GET: /api/TimeSlots/search?query={searchQuery}
-        //public async Task<List<TimeSlot>> SearchTimeSlotsAsync(string searchQuery)
+        //// GET: /api/Zones/search?query={searchQuery}
+        //public async Task<List<Zone>> SearchZonesAsync(string searchQuery)
         //{
         //    try
         //    {
         //        var encodedQuery = Uri.EscapeDataString(searchQuery);
-        //        var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/TimeSlots/search?query={encodedQuery}");
+        //        var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Zones/search?query={encodedQuery}");
         //        response.EnsureSuccessStatusCode();
 
         //        var json = await response.Content.ReadAsStringAsync();
-        //        var TimeSlots = JsonSerializer.Deserialize<List<TimeSlot>>(json, new JsonSerializerOptions
+        //        var Zones = JsonSerializer.Deserialize<List<Zone>>(json, new JsonSerializerOptions
         //        {
         //            PropertyNameCaseInsensitive = true
         //        });
 
-        //        return TimeSlots ?? new List<TimeSlot>();
+        //        return Zones ?? new List<Zone>();
         //    }
         //    catch (HttpRequestException ex)
         //    {
@@ -199,22 +199,22 @@ namespace AppBookingND2.Service
         //    }
         //}
 
-        //// GET: /api/TimeSlots/department/{department}
-        //public async Task<List<TimeSlot>> GetTimeSlotsByDepartmentAsync(string department)
+        //// GET: /api/Zones/department/{department}
+        //public async Task<List<Zone>> GetZonesByDepartmentAsync(string department)
         //{
         //    try
         //    {
         //        var encodedDepartment = Uri.EscapeDataString(department);
-        //        var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/TimeSlots/department/{encodedDepartment}");
+        //        var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Zones/department/{encodedDepartment}");
         //        response.EnsureSuccessStatusCode();
 
         //        var json = await response.Content.ReadAsStringAsync();
-        //        var TimeSlots = JsonSerializer.Deserialize<List<TimeSlot>>(json, new JsonSerializerOptions
+        //        var Zones = JsonSerializer.Deserialize<List<Zone>>(json, new JsonSerializerOptions
         //        {
         //            PropertyNameCaseInsensitive = true
         //        });
 
-        //        return TimeSlots ?? new List<TimeSlot>();
+        //        return Zones ?? new List<Zone>();
         //    }
         //    catch (HttpRequestException ex)
         //    {
