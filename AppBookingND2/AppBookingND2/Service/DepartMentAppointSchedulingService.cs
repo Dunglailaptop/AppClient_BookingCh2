@@ -61,11 +61,11 @@ namespace AppBookingND2.Service
         }
 
         // GET: /api/DepartMentAppointSchedulings
-        public async Task<List<DepartMentAppointScheduling>> GetDepartMentAppointSchedulingsAsync()
+        public async Task<List<DepartMentAppointScheduling>> GetDepartMentAppointSchedulingsAsync(int Year, int Week)
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartmentalAppointmentScheduling/GetListDepartmentalAppointmentScheduling");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartmentalAppointmentScheduling/GetListDepartmentalAppointmentScheduling?Week={Week}&Year={Year}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();

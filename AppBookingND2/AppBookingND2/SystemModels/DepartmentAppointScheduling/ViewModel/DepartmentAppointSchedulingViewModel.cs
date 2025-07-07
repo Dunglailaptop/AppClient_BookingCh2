@@ -29,12 +29,14 @@ namespace AppBookingND2.ViewModel
         private BindingList<DepartMent> _DepartMent;
         private BindingList<Doctor> _Doctor;
         private BindingList<Examination> _Examination;
+        private BindingList<ComboboxDateInWeek> _ComboboxDateInWeek;
         private DepartMentAppointScheduling _selectedDepartMentAppointScheduling;
         private bool _isLoading;
         private string _searchText;
         private string _errorMessage;
         private int ZoneId;
-
+        private int _Year;
+        private int _Week;
         public BindingList<DepartMentAppointScheduling> DepartMentAppointSchedulings
         {
             get => _DepartMentAppointSchedulings;
@@ -92,6 +94,15 @@ namespace AppBookingND2.ViewModel
             }
         }
 
+        public BindingList<ComboboxDateInWeek> ComboboxDateInWeeks
+        {
+            get => _ComboboxDateInWeek;
+            set
+            {
+                _ComboboxDateInWeek = value;
+                OnPropertyChanged();
+            }
+        }
         public int Zone_Id
         {
             get => ZoneId;
@@ -143,6 +154,27 @@ namespace AppBookingND2.ViewModel
             }
         }
 
+
+        public int Year
+        {
+            get => _Year;
+            set
+            {
+                _Year = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int Week
+        {
+            get => _Week;
+            set
+            {
+                _Week = value;
+                OnPropertyChanged();
+            }
+        }
+
         public bool IsDepartMentAppointSchedulingSelected => SelectedDepartMentAppointScheduling != null;
 
         // Commands
@@ -160,6 +192,8 @@ namespace AppBookingND2.ViewModel
         public ICommand LoadDataCommand_Sepcialty { get; }
         public ICommand LoadDataCommand_DepartMent { get; }
 
+
+        public ICommand LoadDataCommand_ComboboxDateInWeek { get; }
         public DepartmentAppointSchedulingViewModel()
         {
             //serviuce
@@ -176,6 +210,7 @@ namespace AppBookingND2.ViewModel
             DepartMents = new BindingList<DepartMent>();
             DepartMentAppointSchedulings = new BindingList<DepartMentAppointScheduling>();
             Rooms = new BindingList<Room>();
+            ComboboxDateInWeeks = new BindingList<ComboboxDateInWeek>();
             // Khởi tạo commands
             LoadDataCommand = new RelayCommand(async () => await LoadDataAsync());
             LoadDataCommand_Room = new RelayCommand(async () => await LoadDataAsync_Room());
@@ -183,12 +218,35 @@ namespace AppBookingND2.ViewModel
             LoadDataCommand_Doctor = new RelayCommand(async () => await LoadDataAsync_Doctor());
             LoadDataCommand_Sepcialty = new RelayCommand(async () => await LoadDataAsync_Sepcialty());
             LoadDataCommand_DepartMent = new RelayCommand(async () => await LoadDataAsync_DepartMent());
+            LoadDataCommand_ComboboxDateInWeek = new RelayCommand(async () => await LoadComboboxDateInWeek());
             //RefreshCommand = new RelayCommand(async () => await RefreshDataAsync());
             //DeleteCommand = new RelayCommand(DeleteDepartMentAppointScheduling, () => IsDepartMentAppointSchedulingSelected);
             //SearchCommand = new RelayCommand(SearchDepartMentAppointSchedulings);
             AddCommand = new RelayCommand(async () => await AddDePartMentAppointSchedulingAsync());
             //EditCommand = new RelayCommand(EditDepartMentAppointScheduling, () => IsDepartMentAppointSchedulingSelected);
         }
+
+        public async Task LoadComboboxDateInWeek()
+        {
+            // Lấy 7 ngày trong tuần 28/2025
+            List<DateTime> days = WeekHelper.GetWeekDays(Year, Week);
+
+            // Lấy text đã format
+            List<string> dayTexts = WeekHelper.GetWeekDaysFormatted(2025, 28);
+
+            // Bind vào ComboBox
+            var comboItems = WeekHelper.GetWeekDaysForComboBox(Year, Week);
+
+            ComboboxDateInWeeks.Clear();
+            foreach(var item in days)
+            {
+                ComboboxDateInWeek date = new ComboboxDateInWeek();
+                date.Id = item;
+                date.Date = item;
+                ComboboxDateInWeeks.Add(date);
+            }
+        }
+
         public async Task LoadDataAsync()
         {
             try
@@ -196,7 +254,7 @@ namespace AppBookingND2.ViewModel
                 IsLoading = true;
                 ErrorMessage = null;
 
-                var datares = await _DepartMentAppointSchedulingService.GetDepartMentAppointSchedulingsAsync();
+                var datares = await _DepartMentAppointSchedulingService.GetDepartMentAppointSchedulingsAsync(Year,Week);
 
                 DepartMentAppointSchedulings.Clear();
                 foreach (var item in datares)

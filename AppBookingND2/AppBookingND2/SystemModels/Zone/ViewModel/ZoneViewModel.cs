@@ -25,7 +25,6 @@ namespace AppBookingND2.ViewModel
         private string _searchText;
         private string _errorMessage;
 
-        private int idzone;
    
 
 
@@ -70,15 +69,7 @@ namespace AppBookingND2.ViewModel
             }
         }
 
-        public int id_zone
-        {
-            get => idzone;
-            set
-            {
-                idzone = value;
-                OnPropertyChanged();
-            }
-        }
+      
 
         // Commands
         public ICommand LoadDataCommand { get; }

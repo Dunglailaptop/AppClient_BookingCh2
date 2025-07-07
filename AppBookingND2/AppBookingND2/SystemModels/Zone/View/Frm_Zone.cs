@@ -1,4 +1,5 @@
-﻿using AppBookingND2.ViewModel;
+﻿using AppBookingND2.Helper;
+using AppBookingND2.ViewModel;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
 using System;
@@ -28,7 +29,8 @@ namespace AppBookingND2.SystemModels.Zone
             int selectedId = Convert.ToInt32(lookUpEdit1.EditValue);
             var lectedZone = zoneViewModel.Zones.FirstOrDefault(z => z.Id == selectedId);
             Console.WriteLine(lectedZone);
-            zoneViewModel.id_zone = lectedZone.Id;
+            SharedData.SelectedZoneId = lectedZone.Id;
+            SharedData.NameZone = lectedZone.Name;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

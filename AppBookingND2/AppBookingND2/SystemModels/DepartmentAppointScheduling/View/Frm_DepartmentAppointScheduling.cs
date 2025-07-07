@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
@@ -100,6 +101,11 @@ namespace AppBookingND2.View
         {
             AddListDepartmentAppointScheduling();
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+           LoadDataAndBind();
+        }
     }
     
 
@@ -114,7 +120,13 @@ namespace AppBookingND2.View
             DateInfo dateDetails = DateHelper.GetDateDetails(now);
             textEdit1.Text = dateDetails.Year.ToString();
             textEdit2.Text = dateDetails.WeekOfYear.ToString();
-            viewModel.Zone_Id = zoneViewModel.id_zone;
+            viewModel.Year = dateDetails.Year;
+            viewModel.Week  = dateDetails.WeekOfYear;
+            labelControl3.Text = SharedData.NameZone;
+            viewModel.Zone_Id = SharedData.SelectedZoneId;
+
+         
+
             this.Load += async (s, e) =>
             {
                 await LoadDataAndBind();
@@ -134,6 +146,7 @@ namespace AppBookingND2.View
                 await viewModel.LoadDataAsync_Examination();
                 await viewModel.LoadDataAsync_Doctor();
                 await viewModel.LoadDataAsync_Sepcialty();
+                await viewModel.LoadComboboxDateInWeek();
                 // Bind data
                 gridControl1.DataSource = viewModel.DepartMentAppointSchedulings;
                 loadcomboboxDepartMentAlternativeAsync();
@@ -141,7 +154,7 @@ namespace AppBookingND2.View
                 loadcomboboxRoomAlternativeAsync();
                 loadcomboboxSepcialtyAlternativeAsync();
                 loadcomboboxDoctorAlternativeAsync();
-
+                loadcomboboxDateInWeekAlternativeAsync();
                 // Thêm button column CUỐI CÙNG
                 AddButtonColumn();
 
@@ -301,6 +314,61 @@ namespace AppBookingND2.View
                 MessageBox.Show($"Lỗi khi thêm dữ liệu: {ex.Message}");
             }
         }
+
+        public async Task loadcomboboxDateInWeekAlternativeAsync()
+        {
+            RepositoryItemLookUpEdit repoLookUpEdit = new RepositoryItemLookUpEdit();
+            var doctorList = new List<ComboBoxItem>();
+            BindingList<ComboboxDateInWeek> listRoom = viewModel.ComboboxDateInWeeks;
+
+            if (listRoom != null)
+            {
+                foreach (ComboboxDateInWeek item in listRoom)
+                {
+                    doctorList.Add(new ComboBoxItem
+                    {
+                        Id = item.Id.ToString(),
+                        Name = item.Date.ToString("dd/MM/yyyy")
+                    });
+                }
+            }
+
+            repoLookUpEdit.DataSource = doctorList;
+            repoLookUpEdit.ValueMember = "Id";
+            repoLookUpEdit.DisplayMember = "Name";
+            repoLookUpEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            repoLookUpEdit.NullText = "";
+
+            // 👉 Thêm đoạn này để ẩn cột Id
+            // 👉 Ẩn cột Id bằng cách chỉ thêm lại cột Name
+            repoLookUpEdit.Columns.Clear();
+            repoLookUpEdit.Columns.Add(new LookUpColumnInfo("Name", 100, "Ngày khám"));
+
+
+            gridControl1.RepositoryItems.Add(repoLookUpEdit);
+            gridView1.Columns["DateInWeek"].ColumnEdit = repoLookUpEdit;
+
+            gridView1.CellValueChanged += GridView1_CellValueChanged_DateInWeek;
+
+        }
+
+        private void GridView1_CellValueChanged_DateInWeek(object sender, CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "DateInWeek")
+            {
+                var currentItem = gridView1.GetRow(e.RowHandle) as DepartMentAppointScheduling;
+                if (currentItem != null)
+                {
+                    var selectedId = e.Value?.ToString();
+                    if (!string.IsNullOrEmpty(selectedId))
+                    {
+                        currentItem.DateInWeek = Convert.ToDateTime(selectedId);
+                        Console.WriteLine($"Room ID updated: {currentItem.RoomId}");
+                    }
+                }
+            }
+        }
+
         public async Task loadcomboboxRoomAlternativeAsync()
         {
             RepositoryItemLookUpEdit repoLookUpEdit = new RepositoryItemLookUpEdit();
