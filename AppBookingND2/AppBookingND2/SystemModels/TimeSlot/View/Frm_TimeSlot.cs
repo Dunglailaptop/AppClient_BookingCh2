@@ -40,11 +40,23 @@ namespace AppBookingND2.SystemModels.TimeSlot.View
         public int spacemintues { get; set; }
         private async Task Setup()
         {
-            label1.Text = "Tổng số ca:" + total.ToString();
-            label2.Text = "Tổng số phút:" + spacemintues.ToString();
             viewModel.DepartMentAppointSchedulingId = DepartMentAppointSchedulingId;
-            viewModel.LoadDataAsyncByDepartMentAppointSchedulingId();
-            gridControl1.DataSource = viewModel.TimeSlots;
+            await viewModel.LoadDataAsyncByDepartMentAppointSchedulingId();
+
+            // Kiểm tra data đã load chưa
+            if (viewModel.TimeSlots != null && viewModel.TimeSlots.Count > 0)
+            {
+                gridControl1.DataSource = viewModel.TimeSlots;
+                label1.Text = "Tổng số ca:" + viewModel.Totals;
+                label2.Text = "Tổng số phút:" + spacemintues.ToString();
+            }
+            else
+            {
+                // Xử lý khi không có data
+                gridControl1.DataSource = null;
+                label1.Text = "Tổng số ca: 0";
+                label2.Text = "Tổng số phút: 0";
+            }
         }
     }
 }

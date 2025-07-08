@@ -254,7 +254,7 @@ namespace AppBookingND2.ViewModel
                 IsLoading = true;
                 ErrorMessage = null;
 
-                var datares = await _DepartMentAppointSchedulingService.GetDepartMentAppointSchedulingsAsync(Year,Week);
+                var datares = await _DepartMentAppointSchedulingService.GetDepartMentAppointSchedulingsAsync(Year,Week,Zone_Id);
 
                 DepartMentAppointSchedulings.Clear();
                 foreach (var item in datares)

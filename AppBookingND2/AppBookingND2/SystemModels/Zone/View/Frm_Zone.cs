@@ -47,12 +47,14 @@ namespace AppBookingND2.SystemModels.Zone
     {
       public async Task setupAsync()
         {
+            lookUpEdit1.Properties.NullText = "";
             zoneViewModel.LoadDataAsync();
             lookUpEdit1.Properties.DataSource = zoneViewModel.Zones;
             lookUpEdit1.Properties.DisplayMember = "Name";
             lookUpEdit1.Properties.ValueMember = "Id";
             lookUpEdit1.EditValue = zoneViewModel.Zones.FirstOrDefault()?.Id;
+            
         }
-    
+
     }
 }

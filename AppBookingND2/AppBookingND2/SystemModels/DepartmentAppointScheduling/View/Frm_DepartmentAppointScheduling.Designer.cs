@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DepartmentAppointScheduling));
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -40,7 +41,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -73,7 +73,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1308, 715);
-            this.splitContainerControl1.SplitterPosition = 49;
+            this.splitContainerControl1.SplitterPosition = 76;
             this.splitContainerControl1.TabIndex = 0;
             // 
             // panelControl1
@@ -90,8 +90,24 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1308, 94);
+            this.panelControl1.Size = new System.Drawing.Size(1308, 56);
             this.panelControl1.TabIndex = 6;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Appearance.Options.UseForeColor = true;
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(521, 0);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(30);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.simpleButton3.Size = new System.Drawing.Size(174, 36);
+            this.simpleButton3.TabIndex = 7;
+            this.simpleButton3.Text = "Làm mới";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // labelControl3
             // 
@@ -105,12 +121,12 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(226, 2);
+            this.textEdit1.Location = new System.Drawing.Point(65, 2);
             this.textEdit1.Margin = new System.Windows.Forms.Padding(24);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(96, 34);
+            this.textEdit1.Size = new System.Drawing.Size(91, 34);
             this.textEdit1.TabIndex = 0;
             // 
             // simpleButton2
@@ -157,12 +173,12 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(63, 2);
+            this.textEdit2.Location = new System.Drawing.Point(230, 2);
             this.textEdit2.Margin = new System.Windows.Forms.Padding(30);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Size = new System.Drawing.Size(94, 34);
+            this.textEdit2.Size = new System.Drawing.Size(95, 34);
             this.textEdit2.TabIndex = 2;
             this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
             // 
@@ -186,7 +202,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(19);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1308, 659);
+            this.gridControl1.Size = new System.Drawing.Size(1308, 632);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -199,22 +215,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged_1);
             // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(521, 0);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(30);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.simpleButton3.Size = new System.Drawing.Size(174, 36);
-            this.simpleButton3.TabIndex = 7;
-            this.simpleButton3.Text = "Làm mới";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
             // Frm_DepartmentAppointScheduling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -222,7 +222,7 @@
             this.ClientSize = new System.Drawing.Size(1308, 715);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "Frm_DepartmentAppointScheduling";
-            this.Text = "Frm_DepartmentAppointSchedulingcs";
+            this.Text = "Danh sách lịch khám";
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
             this.splitContainerControl1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();

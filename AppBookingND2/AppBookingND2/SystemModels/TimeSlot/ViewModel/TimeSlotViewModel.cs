@@ -27,7 +27,7 @@ namespace AppBookingND2.ViewModel
 
         private int _DepartMentAppointSchedulingId;
 
-
+        private int total;
 
         public BindingList<TimeSlot> TimeSlots
         {
@@ -79,6 +79,15 @@ namespace AppBookingND2.ViewModel
             }
         }
 
+        public int Totals
+        {
+            get => total;
+            set
+            {
+                total = value;
+                OnPropertyChanged();
+            }
+        }
 
         // Commands
         public ICommand LoadDataCommand { get; }
@@ -115,6 +124,7 @@ namespace AppBookingND2.ViewModel
                 {
                     TimeSlots.Add(item);
                 }
+                Totals = TimeSlots.Count;
             }
             catch (Exception ex)
             {
