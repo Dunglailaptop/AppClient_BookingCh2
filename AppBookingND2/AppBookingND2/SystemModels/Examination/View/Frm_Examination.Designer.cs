@@ -96,7 +96,7 @@
             this.ClientSize = new System.Drawing.Size(1575, 615);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "Frm_Examination";
-            this.Text = "Frm_Examination";
+            this.Text = "Ca khám";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();

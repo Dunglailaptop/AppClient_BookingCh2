@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AppBookingND2.View
+namespace AppBookingND2.SystemModels.Login.View
 {
-    public partial class Frm_Room : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_Login : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Room()
+        public Frm_Login()
         {
             InitializeComponent();
         }
 
-        private void Frm_Room_Load(object sender, EventArgs e)
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
         {
 
         }

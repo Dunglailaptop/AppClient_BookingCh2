@@ -279,7 +279,7 @@ namespace AppBookingND2.ViewModel
                 IsLoading = true;
                 ErrorMessage = null;
 
-                var datares = await _RoomService.GetRoomsAsync(Zone_Id);
+                var datares = await _RoomService.GetRoomByIdAsync(Zone_Id);
 
                 Rooms.Clear();
                 foreach (var item in datares)

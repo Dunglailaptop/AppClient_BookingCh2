@@ -61,11 +61,11 @@ namespace AppBookingND2.Service
         }
 
         // GET: /api/GetRoomsAsync
-        public async Task<List<Room>> GetRoomsAsync(int id)
+        public async Task<List<Room>> GetRoomsAsync()
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoomByZoneId?ZoneId={id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoom");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -89,22 +89,22 @@ namespace AppBookingND2.Service
         }
 
         // GET: /api/Rooms/{id}
-        public async Task<Room> GetRoomByIdAsync(int id)
+        public async Task<List<Room>> GetRoomByIdAsync(int id)
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Rooms/{id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoomByZoneId?ZoneId={id}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
                 // Deserialize ApiResponse wrapper trước
-                var apiResponse = JsonSerializer.Deserialize<ApiResponse<Room>>(json, new JsonSerializerOptions
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<Room>>>(json, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
                 // Trả về data từ ApiResponse
-                return apiResponse?.Data ?? new Room();
+                return apiResponse?.Data ?? new List<Room>();
             }
             catch (HttpRequestException ex)
             {

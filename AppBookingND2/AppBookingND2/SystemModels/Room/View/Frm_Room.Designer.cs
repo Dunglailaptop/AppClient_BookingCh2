@@ -1,6 +1,6 @@
-﻿namespace AppBookingND2.SystemModels.DepartMent.View
+﻿namespace AppBookingND2.SystemModels.Room.View
 {
-    partial class Frm_DepartMent
+    partial class Frm_Room
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DepartMent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Room));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -49,7 +49,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1385, 799);
+            this.gridControl1.Size = new System.Drawing.Size(1703, 731);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -76,9 +76,9 @@
             // 
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1385, 866);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1703, 798);
             this.splitContainerControl1.SplitterPosition = 60;
-            this.splitContainerControl1.TabIndex = 1;
+            this.splitContainerControl1.TabIndex = 2;
             // 
             // simpleButton1
             // 
@@ -89,13 +89,13 @@
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Đồng bộ";
             // 
-            // Frm_DepartMent
+            // Frm_Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1385, 866);
+            this.ClientSize = new System.Drawing.Size(1703, 798);
             this.Controls.Add(this.splitContainerControl1);
-            this.Name = "Frm_DepartMent";
+            this.Name = "Frm_Room";
             this.Text = "Phòng khám";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

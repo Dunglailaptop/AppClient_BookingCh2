@@ -1,6 +1,6 @@
-﻿namespace AppBookingND2.SystemModels.DepartMent.View
+﻿namespace AppBookingND2.SystemModels.Zone.View
 {
-    partial class Frm_DepartMent
+    partial class Frm_Zone_List
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DepartMent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Zone_List));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -41,6 +42,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -49,7 +51,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1385, 799);
+            this.gridControl1.Size = new System.Drawing.Size(1440, 497);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -74,9 +76,10 @@
             // 
             // splitContainerControl1.Panel2
             // 
+            this.splitContainerControl1.Panel2.Controls.Add(this.panelControl1);
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1385, 866);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1440, 564);
             this.splitContainerControl1.SplitterPosition = 60;
             this.splitContainerControl1.TabIndex = 1;
             // 
@@ -89,14 +92,21 @@
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Đồng bộ";
             // 
-            // Frm_DepartMent
+            // panelControl1
+            // 
+            this.panelControl1.Location = new System.Drawing.Point(709, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(8, 8);
+            this.panelControl1.TabIndex = 1;
+            // 
+            // Frm_Zone_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1385, 866);
+            this.ClientSize = new System.Drawing.Size(1440, 564);
             this.Controls.Add(this.splitContainerControl1);
-            this.Name = "Frm_DepartMent";
-            this.Text = "Phòng khám";
+            this.Name = "Frm_Zone_List";
+            this.Text = "Danh sách ca khám";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
@@ -105,6 +115,7 @@
             this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -115,5 +126,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
     }
 }
