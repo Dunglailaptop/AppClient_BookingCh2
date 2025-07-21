@@ -117,6 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="simpleButton4.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        TrJ7/zb8f+o/T3TGS+p3dR8AAAAASUVORK5CYII=
+</value>
+  </data>
   <assembly alias="DevExpress.Data.v22.2" name="DevExpress.Data.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="simpleButton3.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v22.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

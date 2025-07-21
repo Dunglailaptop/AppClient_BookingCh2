@@ -41,6 +41,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
             this.splitContainerControl1.Panel1.SuspendLayout();
@@ -73,11 +74,12 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(1308, 715);
-            this.splitContainerControl1.SplitterPosition = 76;
+            this.splitContainerControl1.SplitterPosition = 65;
             this.splitContainerControl1.TabIndex = 0;
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton4);
             this.panelControl1.Controls.Add(this.simpleButton3);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.textEdit1);
@@ -90,7 +92,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(10);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1308, 56);
+            this.panelControl1.Size = new System.Drawing.Size(1308, 52);
             this.panelControl1.TabIndex = 6;
             // 
             // simpleButton3
@@ -202,7 +204,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(19);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1308, 632);
+            this.gridControl1.Size = new System.Drawing.Size(1308, 643);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -214,6 +216,22 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged_1);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(1195, 2);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(24);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.simpleButton4.Size = new System.Drawing.Size(111, 48);
+            this.simpleButton4.TabIndex = 8;
+            this.simpleButton4.Text = "Excel";
             // 
             // Frm_DepartmentAppointScheduling
             // 
@@ -254,5 +272,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }
