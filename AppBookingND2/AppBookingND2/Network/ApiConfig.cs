@@ -28,7 +28,7 @@ namespace AppBookingND2.Network
         public ApiConfig()
         {
             // Giá trị mặc định
-            BaseUrl = "https://localhost:7138";
+            BaseUrl = "http://192.168.22.23:89";
             TimeoutSeconds = 30;
             ContentType = "application/json";
             CustomHeaders = new Dictionary<string, string>();

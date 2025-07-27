@@ -65,7 +65,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartMent/GetListDepartMent");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.De_List}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -93,7 +93,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartMents/{id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.De_Detail(id)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -120,7 +120,7 @@ namespace AppBookingND2.Service
                 var json = JsonSerializer.Serialize(DepartMent);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}/api/DepartMents", content);
+                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.De_Create}", content);
                 response.EnsureSuccessStatusCode();
 
                 var responseJson = await response.Content.ReadAsStringAsync();
@@ -145,7 +145,7 @@ namespace AppBookingND2.Service
                 var json = JsonSerializer.Serialize(DepartMent);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-                var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}/api/DepartMents/{id}", content);
+                var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.De_Update(id)}", content);
                 response.EnsureSuccessStatusCode();
 
                 var responseJson = await response.Content.ReadAsStringAsync();
@@ -167,7 +167,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}/api/DepartMents/{id}");
+                var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.De_Delete(id)}");
                 return response.IsSuccessStatusCode;
             }
             catch (HttpRequestException ex)
@@ -177,51 +177,7 @@ namespace AppBookingND2.Service
         }
 
         // GET: /api/DepartMents/search?query={searchQuery}
-        public async Task<List<DepartMent>> SearchDepartMentsAsync(string searchQuery)
-        {
-            try
-            {
-                var encodedQuery = Uri.EscapeDataString(searchQuery);
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartMents/search?query={encodedQuery}");
-                response.EnsureSuccessStatusCode();
-
-                var json = await response.Content.ReadAsStringAsync();
-                var DepartMents = JsonSerializer.Deserialize<List<DepartMent>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                return DepartMents ?? new List<DepartMent>();
-            }
-            catch (HttpRequestException ex)
-            {
-                throw new Exception($"Lỗi tìm kiếm: {ex.Message}", ex);
-            }
-        }
-
-        // GET: /api/DepartMents/department/{department}
-        public async Task<List<DepartMent>> GetDepartMentsByDepartmentAsync(string department)
-        {
-            try
-            {
-                var encodedDepartment = Uri.EscapeDataString(department);
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartMents/department/{encodedDepartment}");
-                response.EnsureSuccessStatusCode();
-
-                var json = await response.Content.ReadAsStringAsync();
-                var DepartMents = JsonSerializer.Deserialize<List<DepartMent>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                return DepartMents ?? new List<DepartMent>();
-            }
-            catch (HttpRequestException ex)
-            {
-                throw new Exception($"Lỗi lấy danh sách theo phòng ban: {ex.Message}", ex);
-            }
-        }
-
+        
         // Dispose HttpClient
         public void Dispose()
         {

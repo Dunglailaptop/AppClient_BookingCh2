@@ -65,7 +65,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/ExamType/GetListExamType");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.Ex_List}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -93,7 +93,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/ExamTypes/{id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.Ex_Detail(id)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -120,7 +120,7 @@ namespace AppBookingND2.Service
                 var json = JsonSerializer.Serialize(ExamType);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}/api/ExamTypes", content);
+                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Create}", content);
                 response.EnsureSuccessStatusCode();
 
                 var responseJson = await response.Content.ReadAsStringAsync();
@@ -145,7 +145,7 @@ namespace AppBookingND2.Service
                 var json = JsonSerializer.Serialize(ExamType);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-                var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}/api/ExamTypes/{id}", content);
+                var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Update(id)}", content);
                 response.EnsureSuccessStatusCode();
 
                 var responseJson = await response.Content.ReadAsStringAsync();
@@ -167,7 +167,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}/api/ExamTypes/{id}");
+                var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Delete(id)}");
                 return response.IsSuccessStatusCode;
             }
             catch (HttpRequestException ex)
@@ -176,51 +176,7 @@ namespace AppBookingND2.Service
             }
         }
 
-        // GET: /api/ExamTypes/search?query={searchQuery}
-        public async Task<List<ExamType>> SearchExamTypesAsync(string searchQuery)
-        {
-            try
-            {
-                var encodedQuery = Uri.EscapeDataString(searchQuery);
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/ExamTypes/search?query={encodedQuery}");
-                response.EnsureSuccessStatusCode();
-
-                var json = await response.Content.ReadAsStringAsync();
-                var ExamTypes = JsonSerializer.Deserialize<List<ExamType>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                return ExamTypes ?? new List<ExamType>();
-            }
-            catch (HttpRequestException ex)
-            {
-                throw new Exception($"Lỗi tìm kiếm: {ex.Message}", ex);
-            }
-        }
-
-        // GET: /api/ExamTypes/ExamType/{ExamType}
-        public async Task<List<ExamType>> GetExamTypesByExamTypeAsync(string ExamType)
-        {
-            try
-            {
-                var encodedExamType = Uri.EscapeDataString(ExamType);
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/ExamTypes/ExamType/{encodedExamType}");
-                response.EnsureSuccessStatusCode();
-
-                var json = await response.Content.ReadAsStringAsync();
-                var ExamTypes = JsonSerializer.Deserialize<List<ExamType>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                return ExamTypes ?? new List<ExamType>();
-            }
-            catch (HttpRequestException ex)
-            {
-                throw new Exception($"Lỗi lấy danh sách theo phòng ban: {ex.Message}", ex);
-            }
-        }
+       
 
         // Dispose HttpClient
         public void Dispose()

@@ -65,7 +65,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoom");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_List}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -93,7 +93,30 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Room/GetListRoomByZoneId?ZoneId={id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Detail(id)}");
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                // Deserialize ApiResponse wrapper trước
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<Room>>>(json, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+                // Trả về data từ ApiResponse
+                return apiResponse?.Data ?? new List<Room>();
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new Exception($"Lỗi kết nối API: {ex.Message}", ex);
+            }
+        }
+        // GET: /api/Rooms/{Zoneid}
+        public async Task<List<Room>> GetRoomByZoneIdAsync(int id)
+        {
+            try
+            {
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_List_ZoneId(id)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -120,7 +143,7 @@ namespace AppBookingND2.Service
                 var json = JsonSerializer.Serialize(Room);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}/api/Rooms", content);
+                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Create}", content);
                 response.EnsureSuccessStatusCode();
 
                 var responseJson = await response.Content.ReadAsStringAsync();
@@ -145,7 +168,7 @@ namespace AppBookingND2.Service
                 var json = JsonSerializer.Serialize(Room);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
 
-                var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}/api/Rooms/{id}", content);
+                var response = await _httpClient.PutAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Update(id)}", content);
                 response.EnsureSuccessStatusCode();
 
                 var responseJson = await response.Content.ReadAsStringAsync();
@@ -167,7 +190,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}/api/Rooms/{id}");
+                var response = await _httpClient.DeleteAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.R_Delete(id)}");
                 return response.IsSuccessStatusCode;
             }
             catch (HttpRequestException ex)
@@ -176,51 +199,7 @@ namespace AppBookingND2.Service
             }
         }
 
-        // GET: /api/Rooms/search?query={searchQuery}
-        public async Task<List<Room>> SearchRoomsAsync(string searchQuery)
-        {
-            try
-            {
-                var encodedQuery = Uri.EscapeDataString(searchQuery);
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Rooms/search?query={encodedQuery}");
-                response.EnsureSuccessStatusCode();
-
-                var json = await response.Content.ReadAsStringAsync();
-                var Rooms = JsonSerializer.Deserialize<List<Room>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                return Rooms ?? new List<Room>();
-            }
-            catch (HttpRequestException ex)
-            {
-                throw new Exception($"Lỗi tìm kiếm: {ex.Message}", ex);
-            }
-        }
-
-        // GET: /api/Rooms/department/{department}
-        public async Task<List<Room>> GetRoomsByDepartmentAsync(string department)
-        {
-            try
-            {
-                var encodedDepartment = Uri.EscapeDataString(department);
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Rooms/department/{encodedDepartment}");
-                response.EnsureSuccessStatusCode();
-
-                var json = await response.Content.ReadAsStringAsync();
-                var Rooms = JsonSerializer.Deserialize<List<Room>>(json, new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                });
-
-                return Rooms ?? new List<Room>();
-            }
-            catch (HttpRequestException ex)
-            {
-                throw new Exception($"Lỗi lấy danh sách theo phòng ban: {ex.Message}", ex);
-            }
-        }
+      
 
         // Dispose HttpClient
         public void Dispose()

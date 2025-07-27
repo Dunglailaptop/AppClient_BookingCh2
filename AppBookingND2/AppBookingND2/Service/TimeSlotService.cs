@@ -65,7 +65,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/TimeSlot/GetListTimeSlot");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.T_List}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -93,7 +93,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/TimeSlot/GetTimeSlotByDepartMentScheduling?id={id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.T_Detail_ClinicSchedule(id)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();

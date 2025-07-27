@@ -65,7 +65,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/zone/list");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.Z_List}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -93,7 +93,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/Zone/GetZoneByDepartMentScheduling?id={id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.Z_Detail(id)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();

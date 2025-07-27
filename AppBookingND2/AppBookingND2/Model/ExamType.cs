@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace AppBookingND2.Model
 {
-    internal class ExamType
+    public class ExamType
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

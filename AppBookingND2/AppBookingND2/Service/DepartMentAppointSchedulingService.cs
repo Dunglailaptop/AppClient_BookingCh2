@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -65,7 +66,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartmentalAppointmentScheduling/GetListDepartmentalAppointmentScheduling?Week={Week}&Year={Year}&ZoneId={ZoneId}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.clinic_List(Week,Year,ZoneId)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -93,7 +94,7 @@ namespace AppBookingND2.Service
         {
             try
             {
-                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}/api/DepartMentAppointSchedulings/{id}");
+                var response = await _httpClient.GetAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.clinic_Detail(id)}");
                 response.EnsureSuccessStatusCode();
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -119,7 +120,7 @@ namespace AppBookingND2.Service
             {
                 var json = JsonSerializer.Serialize(departMentAppointScheduling);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
-                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}/api/DepartmentalAppointmentScheduling/CreateListDepartmentalAppointmentScheduling", content);
+                var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.clinic_Create}", content);
                 response.EnsureSuccessStatusCode();
                 var responseJson = await response.Content.ReadAsStringAsync();
 
