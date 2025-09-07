@@ -35,7 +35,7 @@
 
         // Room
         public static string R_List => $"{ApiPrefix}/room/list";
-        public static string R_List_ZoneId(int ZoneId) => $"{ApiPrefix}/room/list/{ZoneId}";
+        public static string R_List_ZoneId(int ZoneId) => $"{ApiPrefix}/room/{ZoneId}";
         public static string R_Detail(int id) => $"{ApiPrefix}/room/{id}";
         public static string R_Create => $"{ApiPrefix}/room/create";
         public static string R_Update(int id) => $"{ApiPrefix}/room/{id}";

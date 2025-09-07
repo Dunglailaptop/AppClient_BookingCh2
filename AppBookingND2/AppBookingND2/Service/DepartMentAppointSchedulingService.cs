@@ -15,52 +15,18 @@ namespace AppBookingND2.Service
 {
     public class DepartMentAppointSchedulingService
     {
-        private readonly HttpClient _httpClient;
+        private readonly MyHttpClient _httpClient;
         private readonly ApiConfig _apiConfig;
 
         public DepartMentAppointSchedulingService(ApiConfig apiConfig = null)
         {
             _apiConfig = apiConfig ?? ApiConfig.LoadFromConfig();
-            _httpClient = new HttpClient();
+            _httpClient = new MyHttpClient();
 
-            ConfigureHttpClient();
+           
         }
 
-        private void ConfigureHttpClient()
-        {
-            // Validate config trước khi sử dụng
-            if (!_apiConfig.IsValid())
-            {
-                throw new InvalidOperationException("API configuration is invalid");
-            }
-
-            // Cấu hình timeout
-            _httpClient.Timeout = TimeSpan.FromSeconds(_apiConfig.TimeoutSeconds);
-
-            // Cấu hình headers mặc định
-            _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Accept", _apiConfig.ContentType);
-
-            // Thêm API Key nếu có
-            if (!string.IsNullOrEmpty(_apiConfig.ApiKey))
-            {
-                _httpClient.DefaultRequestHeaders.Add("X-API-Key", _apiConfig.ApiKey);
-            }
-
-            // Thêm Bearer Token nếu có
-            if (!string.IsNullOrEmpty(_apiConfig.BearerToken))
-            {
-                _httpClient.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", _apiConfig.BearerToken);
-            }
-
-            // Thêm custom headers
-            foreach (var header in _apiConfig.CustomHeaders)
-            {
-                _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
-            }
-        }
-
+      
         // GET: /api/DepartMentAppointSchedulings
         public async Task<List<DepartMentAppointScheduling>> GetDepartMentAppointSchedulingsAsync(int Year, int Week, int ZoneId)
         {
@@ -114,17 +80,18 @@ namespace AppBookingND2.Service
         }
 
         // POST: /api/DepartMentAppointSchedulings
-        public async Task<bool> CreateDepartMentAppointSchedulingAsync(List<DepartMentAppointScheduling> departMentAppointScheduling)
+        public async Task<bool> CreateDepartMentAppointSchedulingAsync(List<CinicscheduleCreate> departMentAppointScheduling)
         {
             try
             {
                 var json = JsonSerializer.Serialize(departMentAppointScheduling);
+                Console.WriteLine(json);
                 var content = new StringContent(json, Encoding.UTF8, _apiConfig.ContentType);
                 var response = await _httpClient.PostAsync($"{_apiConfig.BaseUrl}{ApiUrlConstants.clinic_Create}", content);
                 response.EnsureSuccessStatusCode();
                 var responseJson = await response.Content.ReadAsStringAsync();
 
-                //var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<DepartMentAppointScheduling>>>(responseJson, new JsonSerializerOptions
+                //var apiResponse = JsonSerializer.Deserialize<ApiResponse<List<>>(responseJson, new JsonSerializerOptions
                 //{
                 //    PropertyNameCaseInsensitive = true
                 //});
@@ -230,9 +197,6 @@ namespace AppBookingND2.Service
         }
 
         // Dispose HttpClient
-        public void Dispose()
-        {
-            _httpClient?.Dispose();
-        }
+     
     }
 }

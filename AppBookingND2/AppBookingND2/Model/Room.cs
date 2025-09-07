@@ -8,7 +8,14 @@ namespace AppBookingND2.Model
 {
     public class Room
     {
+       
         public int Id { get; set; }
         public string Name { get; set; }
+
+        public int zoneId { get; set; }
+
+        public string zoneName { get; set; }
+        
+        public bool enable { get; set; }
     }
 }

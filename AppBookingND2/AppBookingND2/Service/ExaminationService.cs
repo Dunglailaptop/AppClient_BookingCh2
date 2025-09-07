@@ -14,52 +14,18 @@ namespace AppBookingND2.Service
 {
     public class ExaminationService
     {
-        private readonly HttpClient _httpClient;
+        private readonly MyHttpClient _httpClient;
         private readonly ApiConfig _apiConfig;
 
         public ExaminationService(ApiConfig apiConfig = null)
         {
             _apiConfig = apiConfig ?? ApiConfig.LoadFromConfig();
-            _httpClient = new HttpClient();
+            _httpClient = new MyHttpClient();
 
-            ConfigureHttpClient();
+           
         }
 
-        private void ConfigureHttpClient()
-        {
-            // Validate config trước khi sử dụng
-            if (!_apiConfig.IsValid())
-            {
-                throw new InvalidOperationException("API configuration is invalid");
-            }
-
-            // Cấu hình timeout
-            _httpClient.Timeout = TimeSpan.FromSeconds(_apiConfig.TimeoutSeconds);
-
-            // Cấu hình headers mặc định
-            _httpClient.DefaultRequestHeaders.Clear();
-            _httpClient.DefaultRequestHeaders.Add("Accept", _apiConfig.ContentType);
-
-            // Thêm API Key nếu có
-            if (!string.IsNullOrEmpty(_apiConfig.ApiKey))
-            {
-                _httpClient.DefaultRequestHeaders.Add("X-API-Key", _apiConfig.ApiKey);
-            }
-
-            // Thêm Bearer Token nếu có
-            if (!string.IsNullOrEmpty(_apiConfig.BearerToken))
-            {
-                _httpClient.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", _apiConfig.BearerToken);
-            }
-
-            // Thêm custom headers
-            foreach (var header in _apiConfig.CustomHeaders)
-            {
-                _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
-            }
-        }
-
+  
         // GET: /api/Examinations
         public async Task<List<Examination>> GetExaminationsAsync()
         {

@@ -138,7 +138,8 @@ namespace AppBookingND2.View
             {
                 // Hiển thị loading
                 gridControl1.UseWaitCursor = true;
-
+                viewModel.Week = Convert.ToInt32(textEdit2.EditValue);
+                viewModel.Year = Convert.ToInt32(textEdit1.EditValue);
                 // Load data
                 await viewModel.LoadDataAsync();
                 await viewModel.LoadDataAsync_Room();
@@ -147,6 +148,7 @@ namespace AppBookingND2.View
                 await viewModel.LoadDataAsync_Doctor();
                 await viewModel.LoadDataAsync_Sepcialty();
                 await viewModel.LoadComboboxDateInWeek();
+                await viewModel.LoadDataAsync_ExamType();
                 // Bind data
                 gridControl1.DataSource = viewModel.DepartMentAppointSchedulings;
                 loadcomboboxDepartMentAlternativeAsync();
@@ -155,6 +157,7 @@ namespace AppBookingND2.View
                 loadcomboboxSepcialtyAlternativeAsync();
                 loadcomboboxDoctorAlternativeAsync();
                 loadcomboboxDateInWeekAlternativeAsync();
+                loadcomboboxExamTypeAlternativeAsync();
                 // Thêm button column CUỐI CÙNG
                 AddButtonColumn();
 
@@ -352,6 +355,7 @@ namespace AppBookingND2.View
 
         }
 
+
         private void GridView1_CellValueChanged_DateInWeek(object sender, CellValueChangedEventArgs e)
         {
             if (e.Column.FieldName == "DateInWeek")
@@ -368,7 +372,102 @@ namespace AppBookingND2.View
                 }
             }
         }
+        public async Task loadcomboboxExamTypeAlternativeAsync()
+        {
+            RepositoryItemLookUpEdit repoLookUpEdit = new RepositoryItemLookUpEdit();
+            var doctorList = new List<ComboBoxItem>();
+            BindingList<ExamType> listRoom = viewModel.ExamTypes;
 
+            if (listRoom != null)
+            {
+                foreach (ExamType item in listRoom)
+                {
+                    doctorList.Add(new ComboBoxItem
+                    {
+                        Id = item.Id.ToString(),
+                        Name = item.Name
+                    });
+                }
+            }
+
+            repoLookUpEdit.DataSource = doctorList;
+            repoLookUpEdit.ValueMember = "Id";
+            repoLookUpEdit.DisplayMember = "Name";
+            repoLookUpEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            repoLookUpEdit.NullText = "";
+            gridControl1.RepositoryItems.Add(repoLookUpEdit);
+            gridView1.Columns["ExamTypeId"].ColumnEdit = repoLookUpEdit;
+
+            // Sử dụng GridView event thay vì Repository event
+            gridView1.CellValueChanged += GridView1_CellValueChanged_Examtype;
+
+        }
+
+
+        private void GridView1_CellValueChanged_Examtype(object sender, CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "ExamTypeId")
+            {
+                var currentItem = gridView1.GetRow(e.RowHandle) as DepartMentAppointScheduling;
+                if (currentItem != null)
+                {
+                    var selectedId = e.Value?.ToString();
+                    if (!string.IsNullOrEmpty(selectedId))
+                    {
+                        currentItem.ExamTypeId = Convert.ToInt32(selectedId);
+                        Console.WriteLine($"Room ID updated: {currentItem.RoomId}");
+                    }
+                }
+            }
+        }
+        public async Task loadcomboboxFormExamAlternativeAsync()
+        {
+            RepositoryItemLookUpEdit repoLookUpEdit = new RepositoryItemLookUpEdit();
+
+            // 👉 Chuyển enum thành danh sách ComboBoxItem
+            var examTypeList = Enum.GetValues(typeof(FormExam))
+                .Cast<FormExam>()
+                .Select(e => new ComboBoxItem
+                {
+                    Id = ((int)e).ToString(),
+                    Name = e.ToString()
+                })
+                .ToList();
+
+            repoLookUpEdit.DataSource = examTypeList;
+            repoLookUpEdit.ValueMember = "Id";
+            repoLookUpEdit.DisplayMember = "Name";
+            repoLookUpEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            repoLookUpEdit.NullText = "";
+
+            // 👉 Hiển thị cột Name (ẩn Id)
+            repoLookUpEdit.Columns.Clear();
+            repoLookUpEdit.Columns.Add(new LookUpColumnInfo("FormExam", 100, "Loại khám"));
+
+            // 👉 Gán vào grid
+            gridControl1.RepositoryItems.Add(repoLookUpEdit);
+            gridView1.Columns["ExamTypeId"].ColumnEdit = repoLookUpEdit;
+
+            gridView1.CellValueChanged += GridView1_CellValueChanged_FormExam;
+
+        }
+
+
+        private void GridView1_CellValueChanged_FormExam(object sender, CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "FormExam")
+            {
+                var currentItem = gridView1.GetRow(e.RowHandle) as DepartMentAppointScheduling;
+                if (currentItem != null)
+                {
+                    if (e.Value != null && Enum.IsDefined(typeof(FormExam), e.Value))
+                    {
+                        currentItem.FormExam = (FormExam)Enum.Parse(typeof(FormExam), e.Value.ToString());
+                        Console.WriteLine($"FormExam updated: {currentItem.FormExam}");
+                    }
+                }
+            }
+        }
         public async Task loadcomboboxRoomAlternativeAsync()
         {
             RepositoryItemLookUpEdit repoLookUpEdit = new RepositoryItemLookUpEdit();

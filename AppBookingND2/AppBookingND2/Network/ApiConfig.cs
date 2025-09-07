@@ -28,7 +28,7 @@ namespace AppBookingND2.Network
         public ApiConfig()
         {
             // Giá trị mặc định
-            BaseUrl = "http://192.168.22.23:89";
+            BaseUrl = "https://appbvnd2.benhviennhi.org.vn:1769/v1";
             TimeoutSeconds = 30;
             ContentType = "application/json";
             CustomHeaders = new Dictionary<string, string>();

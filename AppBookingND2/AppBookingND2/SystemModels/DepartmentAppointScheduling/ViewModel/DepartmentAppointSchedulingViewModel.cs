@@ -22,6 +22,7 @@ namespace AppBookingND2.ViewModel
         private readonly DepartMentService _DepartMentService;
         private readonly DoctorService _DoctorService;
         private readonly ExaminationService _ExaminationService;
+        private readonly ExamTypeService _ExamTypeService;
     
         private BindingList<DepartMentAppointScheduling> _DepartMentAppointSchedulings;
         private BindingList<Room> _Room;
@@ -30,7 +31,9 @@ namespace AppBookingND2.ViewModel
         private BindingList<Doctor> _Doctor;
         private BindingList<Examination> _Examination;
         private BindingList<ComboboxDateInWeek> _ComboboxDateInWeek;
+        private BindingList<ExamType> _Examtype;
         private DepartMentAppointScheduling _selectedDepartMentAppointScheduling;
+         
         private bool _isLoading;
         private string _searchText;
         private string _errorMessage;
@@ -53,6 +56,16 @@ namespace AppBookingND2.ViewModel
             set
             {
                 _Room = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public BindingList<ExamType> ExamTypes
+        {
+            get => _Examtype;
+            set
+            {
+                _Examtype = value;
                 OnPropertyChanged();
             }
         }
@@ -124,6 +137,8 @@ namespace AppBookingND2.ViewModel
             }
         }
 
+       
+
         public bool IsLoading
         {
             get => _isLoading;
@@ -192,7 +207,7 @@ namespace AppBookingND2.ViewModel
         public ICommand LoadDataCommand_Sepcialty { get; }
         public ICommand LoadDataCommand_DepartMent { get; }
 
-
+        public ICommand LoadDataCommand_Examtype { get; }
         public ICommand LoadDataCommand_ComboboxDateInWeek { get; }
         public DepartmentAppointSchedulingViewModel()
         {
@@ -203,6 +218,7 @@ namespace AppBookingND2.ViewModel
             _ExaminationService = new ExaminationService();
             _DoctorService = new DoctorService();
             _DepartMentService =new DepartMentService();
+            _ExamTypeService = new ExamTypeService();
             // Bindinglist
             Sepcialtys = new BindingList<Sepcialty>();
             Examinations= new BindingList<Examination>();
@@ -211,6 +227,7 @@ namespace AppBookingND2.ViewModel
             DepartMentAppointSchedulings = new BindingList<DepartMentAppointScheduling>();
             Rooms = new BindingList<Room>();
             ComboboxDateInWeeks = new BindingList<ComboboxDateInWeek>();
+            ExamTypes = new BindingList<ExamType>();
             // Khởi tạo commands
             LoadDataCommand = new RelayCommand(async () => await LoadDataAsync());
             LoadDataCommand_Room = new RelayCommand(async () => await LoadDataAsync_Room());
@@ -219,6 +236,7 @@ namespace AppBookingND2.ViewModel
             LoadDataCommand_Sepcialty = new RelayCommand(async () => await LoadDataAsync_Sepcialty());
             LoadDataCommand_DepartMent = new RelayCommand(async () => await LoadDataAsync_DepartMent());
             LoadDataCommand_ComboboxDateInWeek = new RelayCommand(async () => await LoadComboboxDateInWeek());
+            LoadDataCommand_Examtype = new RelayCommand(async () => await LoadDataAsync_ExamType());
             //RefreshCommand = new RelayCommand(async () => await RefreshDataAsync());
             //DeleteCommand = new RelayCommand(DeleteDepartMentAppointScheduling, () => IsDepartMentAppointSchedulingSelected);
             //SearchCommand = new RelayCommand(SearchDepartMentAppointSchedulings);
@@ -246,6 +264,8 @@ namespace AppBookingND2.ViewModel
                 ComboboxDateInWeeks.Add(date);
             }
         }
+
+       
 
         public async Task LoadDataAsync()
         {
@@ -348,6 +368,33 @@ namespace AppBookingND2.ViewModel
                 IsLoading = false;
             }
         }
+
+
+        public async Task LoadDataAsync_ExamType()
+        {
+            try
+            {
+                IsLoading = true;
+                ErrorMessage = null;
+
+                var datares = await _ExamTypeService.GetExamTypesAsync();
+
+                ExamTypes.Clear();
+                foreach (var item in datares)
+                {
+                    ExamTypes.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessage = ex.Message;
+                MessageBox.Show($"Lỗi khi tải dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                IsLoading = false;
+            }
+        }
         public async Task LoadDataAsync_Sepcialty()
         {
             try
@@ -402,34 +449,64 @@ namespace AppBookingND2.ViewModel
 
         public async Task AddDePartMentAppointSchedulingAsync()
         {
-         
-
             try
             {
                 IsLoading = true;
-                var ResultNotGetId = DepartMentAppointSchedulings.Where(x => x.Id == 0).ToList();
-                var createdEmployee = await _DepartMentAppointSchedulingService.CreateDepartMentAppointSchedulingAsync(ResultNotGetId);
 
-                if (createdEmployee == true)
+                // Lọc danh sách chưa có ID (có thể là mới tạo, chưa lưu vào DB)
+                var resultNotGetId = DepartMentAppointSchedulings
+                    .Where(x => x.Id == 0)
+                    .ToList();
+
+                if (!resultNotGetId.Any())
                 {
-                    //Employees.Add(createdEmployee);
-                    MessageBox.Show("Thêm nhân viên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không có lịch hẹn mới để thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Chuyển đổi từng phần tử sang dạng CinicscheduleCreate
+                var scheduleCreates = resultNotGetId.Select(x => new CinicscheduleCreate
+                {
+                    DateInWeek = x.DateInWeek,
+                    Total = x.Total,
+                    SpaceMinutes = x.SpaceMinutes,
+                    SpecialtyId = x.Specialtyid,
+                    RoomId = x.RoomId,
+                    ExaminationId = x.ExaminationId,
+                    DoctorId = x.DoctorId,
+                    DepartmentHospitalId = x.DepartmentHospitalId,
+
+                    // Bạn cần cập nhật thêm nếu có thông tin:
+                    ExamTypeId = Convert.ToInt32(x.ExamTypeId),            // Gán mặc định hoặc từ dữ liệu khác nếu có
+                    StartSlot = x.startSlot.ToString(),       // Ví dụ, hoặc lấy từ giao diện người dùng
+                    EndSlot = x.endSlot.ToString(),         // Ví dụ
+                    HoldSlot = x.HoldSlot              // Gán mặc định hoặc xử lý logic khác
+                }).ToList();
+
+                // Gọi service để tạo các lịch hẹn
+                var created = await _DepartMentAppointSchedulingService.CreateDepartMentAppointSchedulingAsync(scheduleCreates);
+
+                if (created)
+                {
+                    MessageBox.Show("Thêm lịch hẹn thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thêm lịch hẹn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi thêm nhân viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi khi thêm lịch hẹn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
                 IsLoading = false;
             }
         }
+
         // Dispose service khi không sử dụng
-        public void Dispose()
-        {
-            _DepartMentAppointSchedulingService?.Dispose();
-        }
+    
     
 
         public event PropertyChangedEventHandler PropertyChanged;
